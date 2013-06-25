@@ -1,0 +1,7 @@
+[
+	// hotkeys set to toggle settings, you can copy the following lines to `User/Default (xxx).sublime-keymap`
+	{ "keys": ["alt+t", "alt+w"], "command": "toggle_user_setting", "args": {"setting": "draw_white_space"} },
+	{ "keys": ["alt+t", "alt+l"], "command": "toggle_user_setting", "args": {"setting": "line_numbers"} },
+	{ "keys": ["alt+t", "alt+i"], "command": "toggle_user_setting", "args": {"setting": "draw_indent_guides"} },
+	{ "keys": ["alt+t", "alt+g"], "command": "toggle_user_setting", "args": {"setting": "gutter"} }
+]

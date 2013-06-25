@@ -1,0 +1,4 @@
+[
+	// This will create a context menu item
+	{ "caption": "Copy with line numbers", "command": "copy_with_line_numbers" }
+]

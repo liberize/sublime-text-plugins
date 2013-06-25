@@ -1,0 +1,5 @@
+[
+	// you can simply add the following line to `User/Default (xxx).sublime-keymap`
+	// `f12` is the key to call out the input panel, set it to any key you want (don't use `return` key)
+    { "keys": ["f12"], "command": "exec", "args": {"give_input": "true"}, "context": [{"key": "build_selected"}] }
+]

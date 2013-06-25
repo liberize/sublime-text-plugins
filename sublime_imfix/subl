@@ -1,0 +1,3 @@
+#!/bin/sh
+sublime_dir="/opt/sublime_text"
+LD_PRELOAD="$sublime_dir/libsublime-imfix.so" "$sublime_dir/sublime_text" "$@"
