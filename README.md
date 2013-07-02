@@ -8,6 +8,8 @@ This repository is a collection of some small plugins i am using.
 * `copy_with_line_numbers` copy text with line numbers, may be useful sometimes.
 * `toggle_user_setting` toggle some settings with hotkey, customizable.
 * `sublime_imfix` fix input method for CJK users on linux, originally written by Cjacker Huang, slightly modified to fix a bug.
+* `markdown_preview` convert markdown with `redcarpet` and preview it in browser.
+* `color_scheme` my color scheme, modified from `Juicy`.
 
 ## How to use
 

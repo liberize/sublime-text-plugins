@@ -1,0 +1,6 @@
+[
+	{
+		"caption": "SublimeMarkdown: Preview In Browser",
+		"command": "markdown_preview"
+	}
+]

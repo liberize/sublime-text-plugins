@@ -1,0 +1,48 @@
+# -*- coding: utf-8 -*-
+
+import sublime, sublime_plugin
+import os
+
+class MarkdownPrettifyListener(sublime_plugin.EventListener):
+
+	def __init__(self):
+		settings = sublime.load_settings('Markdown (GFM).sublime-settings')
+		self.file_types = tuple(settings.get('extensions') or [".md", ".markdown", ".mdown"])
+		self.syntax_file = os.path.join('Packages', 'SublimeMarkdown', 'Markdown (GFM).tmLanguage')
+		super(MarkdownPrettifyListener, self).__init__()
+
+	def on_load(self, view):
+		file_name = view.file_name()
+		if file_name and file_name.endswith(self.file_types):
+			view.set_syntax_file(self.syntax_file)
+
+	def on_activated(self, view):
+		file_name = view.file_name()
+		if file_name and file_name.endswith(self.file_types):
+			self.draw_regions(view)
+
+	def on_modified(self, view):
+		file_name = view.file_name()
+		if file_name and file_name.endswith(self.file_types):
+			self.draw_regions(view)
+
+	def draw_regions(self, view):
+		view.add_regions(
+			"MarkdownLink",
+			view.find_by_selector("markup.underline"),
+			"markup.underline.link",
+			flags = sublime.DRAW_NO_FILL | sublime.DRAW_NO_OUTLINE | sublime.DRAW_SOLID_UNDERLINE
+		)
+		view.add_regions(
+			"MarkdownRaw",
+			view.find_by_selector("markup.raw.inline"),
+			"markup.outline",
+			flags = sublime.DRAW_OUTLINED
+		)
+		view.add_regions(
+			"MarkdownHeader",
+			view.find_by_selector("markup.heading"),
+			"markup.heading",
+			"bookmark",
+			flags = sublime.DRAW_NO_FILL | sublime.DRAW_NO_OUTLINE
+		)
