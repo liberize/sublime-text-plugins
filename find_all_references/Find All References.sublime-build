@@ -1,0 +1,5 @@
+{
+	"shell_cmd": "\"/Users/liberize/Library/Application Support/Sublime Text 3/Packages/User/find.sh\" \"${file}\"",
+	"file_regex": "^([^:]+):([0-9]+):([0-9]+):(.*)$",
+	"working_dir": "${file_path}"
+}
